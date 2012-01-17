@@ -43,17 +43,6 @@ if has("multi_byte")
 endif
 " set encoding=utf-8
 
-" Store temporary files in a central spot
-" set backupdir=~/tmp
-" set directory=~/tmp
-" set backup
-
-"" TESTING
-set showfulltag
-set switchbuf=usetab
-" set switchbuf=split - Split always
-" set switchbuf=newtab - Like "split", but open a new tab page.
-
 " -----------------------------------------------------------
 " Special Features
 " -----------------------------------------------------------
@@ -236,6 +225,11 @@ nmap <leader>t <Esc>:tabnew<CR>
 " -----------------------------------------------------------
 
 set background=dark
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
 
 " when we have a colored terminal or gui...
 if &t_Co > 2 || has("gui_running")
