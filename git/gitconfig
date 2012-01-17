@@ -1,0 +1,17 @@
+[http]
+	proxy = http://gatekeeper.mitre.org:80
+
+[user]
+	name = William Heinbockel
+	email = heinbockel@mitre.org
+[core]
+	editor = vim
+	excludesfile = /home/bockel/.gitignore_global
+[merge]
+	tool = vimdiff
+[diff]
+	color = true
+[color]
+	diff = auto
+	status = auto
+	branch = auto

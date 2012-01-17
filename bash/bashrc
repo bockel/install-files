@@ -1,0 +1,24 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+set -o vi
+
+alias chrome="google-chrome --incognito"
+# alias ll='ls -l'
+# alias la='ls -la'
+alias vi='gvim -v'
+alias df='df -h'
+alias w3m='w3m -T text/html'
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin:$HOME/Documents/utils/md
+export PATH
+
+http_proxy="http://gatekeeper.mitre.org:80"
+export http_proxy

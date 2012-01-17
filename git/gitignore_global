@@ -1,0 +1,44 @@
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.lo
+*.so
+*.pyc
+*.a
+
+# Packages
+*.7z
+*.gz
+*.iso
+*.zip
+*.zipx
+*.jar
+*.tar
+*.rar
+*.bz2
+*.tgz
+
+# Other
+*.log
+*.sql
+*.sqlite
+*.swp
+~*
+*~
+
+# Oxygen project
+*.xpr
+
+CMakeFiles
+CMakeCache.txt
+
+# OS Files
+.DS_Store?
+Thumbs.db
+Icon?
+ehthumbs.db
+
