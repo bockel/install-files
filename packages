@@ -38,8 +38,12 @@ curl
 wget
 powertop
 wicd
+wicd-curses
+wicd-gtk
 terminus-fonts
 terminus-fonts-console
+libX11-devel
+libXinerama-devel
 EOF
 
 yum groupinstall -y 'Development Tools'

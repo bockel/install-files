@@ -1,1 +1,4 @@
+if [ -f $HOME/.Xdefaults ]; then
+	xrdb -merge $HOME/.Xdefaults
+fi
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/.startdwm
