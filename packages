@@ -1,0 +1,56 @@
+
+while read line; do
+	yum erase -y "$line"
+done << EOF
+smolt*
+iok
+bluez*
+empathy
+evolution
+EOF
+
+yum update -y
+
+while read line; do
+	yum install -y "$line"
+done <<EOF
+vim-enhanced
+vim-X11
+nspluginwrapper
+alsa-plugins-pulseaudit
+libxml2
+libxml2-devel
+libxslt
+libxslt-devel
+xfce4-power-manager
+thunar
+python-devel
+python-pygments
+ruby
+ruby-devel
+ruby-irb
+ruby-libs
+rubygems
+git
+rxvt-unicode
+w3m
+curl
+wget
+powertop
+wicd
+terminus-fonts
+terminus-fonts-console
+EOF
+
+yum groupinstall -y 'Development Tools'
+
+systemctl disable iscsi.service
+systemctl disable iscsid.service
+systemctl disable atd.service
+systemctl disable cron.service
+systemctl disable abrt.service
+systemctl disable bluetooth.service
+systemctl disable lvm2-monitor.service
+systemctl disable avahi-daemon.service
+systemctl disable mdmonitor-takeover.service
+systemctl disable sendmail.service

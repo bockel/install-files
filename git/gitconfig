@@ -1,9 +1,7 @@
-[http]
-	proxy = http://gatekeeper.mitre.org:80
 
 [user]
 	name = William Heinbockel
-	email = heinbockel@mitre.org
+	email = wheinbockel@nospam-gmail.com
 [core]
 	editor = vim
 	excludesfile = /home/bockel/.gitignore_global

@@ -1,0 +1,13 @@
+
+xfce-power-manager &
+thunar --daemon &
+
+while true; do
+	xsetroot -name "$( date +"%F %R" )"
+	sleep 1m
+done &
+
+wmname LG3D
+while true; do
+	dwm || exit
+done
