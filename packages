@@ -24,6 +24,8 @@ libxslt
 libxslt-devel
 xfce4-power-manager
 thunar
+feh
+rxvt-unicode
 python-devel
 python-pygments
 ruby
@@ -32,7 +34,6 @@ ruby-irb
 ruby-libs
 rubygems
 git
-rxvt-unicode
 w3m
 curl
 wget
@@ -40,10 +41,21 @@ powertop
 wicd
 wicd-curses
 wicd-gtk
-terminus-fonts
-terminus-fonts-console
+ImageMagick
+fontmatrix
 libX11-devel
 libXinerama-devel
+keepassx
+xlockmore
+wmname
+gimp
+dia
+inkscape
+graphviz
+terminus-fonts
+terminus-fonts-console
+liberation-*
+dejavu-*
 EOF
 
 yum groupinstall -y 'Development Tools'
@@ -58,3 +70,16 @@ systemctl disable lvm2-monitor.service
 systemctl disable avahi-daemon.service
 systemctl disable mdmonitor-takeover.service
 systemctl disable sendmail.service
+
+while read line; do
+	gem install "$line"
+done << EOF
+nokogiri
+haml
+rack
+sinatra
+tilt
+kramdown
+showoff
+EOF
+

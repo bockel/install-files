@@ -6,6 +6,8 @@ while true; do
 	xsetroot -name "$( date +"%F %R" )"
 	sleep 1m
 done &
+xmodmap ~/.Xmodmap
+urxvtd -q -o -f
 
 wmname LG3D
 while true; do
