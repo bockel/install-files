@@ -24,6 +24,7 @@ libxslt
 libxslt-devel
 xfce4-power-manager
 thunar
+thunar-volman
 feh
 rxvt-unicode
 python-devel
@@ -38,10 +39,12 @@ w3m
 curl
 wget
 powertop
+htmldoc
 wicd
 wicd-curses
 wicd-gtk
 ImageMagick
+ImageMagick-devel
 fontmatrix
 libX11-devel
 libXinerama-devel
@@ -52,6 +55,7 @@ gimp
 dia
 inkscape
 graphviz
+optipng
 terminus-fonts
 terminus-fonts-console
 liberation-*
@@ -81,5 +85,6 @@ sinatra
 tilt
 kramdown
 showoff
+rmagick
 EOF
 

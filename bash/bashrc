@@ -17,8 +17,6 @@ alias w3m='w3m -T text/html'
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin:$HOME/Documents/utils/md
+PATH=$PATH:$HOME/bin
 export PATH
 
-http_proxy="http://gatekeeper.mitre.org:80"
-export http_proxy
