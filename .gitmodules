@@ -4,9 +4,9 @@
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = http://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
 [submodule "vim/bundle/closetag"]
 	path = vim/bundle/closetag
 	url = git://github.com/docunext/closetag.vim.git
+[submodule "vim/bundle/voom"]
+	path = vim/bundle/voom
+	url = git://github.com/vim-scripts/VOoM.git

@@ -86,6 +86,6 @@
 
  ! Appearance
  !  - use a bitmap font
- urxvt*font:        -xos4-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
- urxvt*boldFont:    -xos4-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
+ urxvt*font:        -xos4-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
+ urxvt*boldFont:    -xos4-terminus-bold-*-*-*-18-*-*-*-*-*-*-*
 
