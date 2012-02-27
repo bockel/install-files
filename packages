@@ -16,16 +16,10 @@ while read line; do
 done <<EOF
 vim-enhanced
 vim-X11
-nspluginwrapper
-alsa-plugins-pulseaudit
 libxml2
 libxml2-devel
 libxslt
 libxslt-devel
-xfce4-power-manager
-thunar
-thunar-volman
-feh
 rxvt-unicode
 python-devel
 python-pygments
@@ -40,9 +34,6 @@ curl
 wget
 powertop
 htmldoc
-wicd
-wicd-curses
-wicd-gtk
 ImageMagick
 ImageMagick-devel
 fontmatrix
