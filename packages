@@ -51,6 +51,16 @@ terminus-fonts
 terminus-fonts-console
 liberation-*
 dejavu-*
+libreoffice-writer
+libreoffice-draw
+libreoffice-impress
+libreoffice-graphicfilter
+libreoffice-langpack-en
+xfce4-power-manager
+Thunar
+thunar-volman
+audit
+audit-libs-devel
 EOF
 
 yum groupinstall -y 'Development Tools'
@@ -65,6 +75,7 @@ systemctl disable lvm2-monitor.service
 systemctl disable avahi-daemon.service
 systemctl disable mdmonitor-takeover.service
 systemctl disable sendmail.service
+systemctl disable NetworkManager.service
 
 while read line; do
 	gem install "$line"
@@ -78,4 +89,18 @@ kramdown
 showoff
 rmagick
 EOF
+
+
+# Install misc codec support
+
+yum --nogpgcheck install http://rpm.livna.org/livna-release.rpm http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
+yum install totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad
+
+# Install Google chrome
+# Needed for google-chrome package
+# yum install -y redhat-lsb libXScrnSaver
+
+echo "yum install complete..."
+echo "Please manually install Oracle Java, google-chrome, and flash packages"
+echo "for google-chrome: yum install -y redhat-lsb libXScrnSaver"
 
