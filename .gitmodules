@@ -18,3 +18,6 @@
 [submodule "vim/bundle/VST"]
 	path = vim/bundle/VST
 	url = http://github.com/vim-scripts/VST.git
+[submodule "vim/bundle/csv.vim"]
+	path = vim/bundle/csv.vim
+	url = https://github.com/vim-scripts/csv.vim.git
