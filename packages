@@ -4,7 +4,6 @@ while read line; do
 done << EOF
 smolt*
 iok
-bluez*
 empathy
 evolution
 EOF
@@ -47,6 +46,7 @@ dia
 inkscape
 graphviz
 optipng
+ghc
 terminus-fonts
 terminus-fonts-console
 liberation-*
@@ -56,6 +56,8 @@ libreoffice-draw
 libreoffice-impress
 libreoffice-graphicfilter
 libreoffice-langpack-en
+xchat
+python-docutils
 xfce4-power-manager
 Thunar
 thunar-volman
@@ -70,31 +72,17 @@ systemctl disable iscsid.service
 systemctl disable atd.service
 systemctl disable cron.service
 systemctl disable abrt.service
-systemctl disable bluetooth.service
-systemctl disable lvm2-monitor.service
+# systemctl disable bluetooth.service
+# systemctl disable lvm2-monitor.service
 systemctl disable avahi-daemon.service
 systemctl disable mdmonitor-takeover.service
 systemctl disable sendmail.service
 systemctl disable NetworkManager.service
 
-while read line; do
-	gem install "$line"
-done << EOF
-nokogiri
-haml
-rack
-sinatra
-tilt
-kramdown
-showoff
-rmagick
-EOF
-
-
 # Install misc codec support
 
-yum --nogpgcheck install http://rpm.livna.org/livna-release.rpm http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
-yum install totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad
+yum --nogpgcheck -y install http://rpm.livna.org/livna-release.rpm http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
+yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad
 
 # Install Google chrome
 # Needed for google-chrome package

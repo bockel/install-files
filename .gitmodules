@@ -8,16 +8,14 @@
 	path = vim/bundle/closetag
 	url = http://github.com/docunext/closetag.vim.git
 [submodule "vim/bundle/voom"]
-	ignore = dirty
 	path = vim/bundle/voom
 	url = http://github.com/vim-scripts/VOoM.git
-[submodule "vim/bundle/vim-markdown"]
-	ignore = dirty
-	path = vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
 [submodule "vim/bundle/VST"]
 	path = vim/bundle/VST
 	url = http://github.com/vim-scripts/VST.git
 [submodule "vim/bundle/csv.vim"]
 	path = vim/bundle/csv.vim
 	url = https://github.com/vim-scripts/csv.vim.git
+[submodule "vim/bundle/vimwiki"]
+	path = vim/bundle/vimwiki
+	url = https://github.com/vim-scripts/vimwiki.git
