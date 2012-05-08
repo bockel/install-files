@@ -1,7 +1,7 @@
 
 [user]
 	name = William Heinbockel
-	email = wheinbockel(at)nospam-gmail.com
+	email = heinbockel@redhat.com
 [core]
 	editor = vim
 	excludesfile = /home/bockel/.gitignore_global

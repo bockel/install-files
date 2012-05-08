@@ -46,7 +46,6 @@ dia
 inkscape
 graphviz
 optipng
-ghc
 terminus-fonts
 terminus-fonts-console
 liberation-*
@@ -59,6 +58,9 @@ libreoffice-langpack-en
 xchat
 python-docutils
 xfce4-power-manager
+gvfs
+gvfs-smb
+acpi
 Thunar
 thunar-volman
 audit
@@ -89,6 +91,6 @@ yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad
 # yum install -y redhat-lsb libXScrnSaver
 
 echo "yum install complete..."
-echo "Please manually install Oracle Java, google-chrome, and flash packages"
-echo "for google-chrome: yum install -y redhat-lsb libXScrnSaver"
+# echo "Please manually install Oracle Java, google-chrome, and flash packages"
+# echo "for google-chrome: yum install -y redhat-lsb libXScrnSaver"
 
