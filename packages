@@ -19,15 +19,24 @@ libxml2
 libxml2-devel
 libxslt
 libxslt-devel
+krb5-workstation
 rxvt-unicode
+git
 python-devel
 python-pygments
+python-docutils
+xfce4-power-manager
+gvfs
+gvfs-smb
+acpi
+Thunar
+thunar-volman
+gnome-keyring
 ruby
 ruby-devel
 ruby-irb
 ruby-libs
 rubygems
-git
 w3m
 curl
 wget
@@ -56,15 +65,10 @@ libreoffice-impress
 libreoffice-graphicfilter
 libreoffice-langpack-en
 xchat
-python-docutils
-xfce4-power-manager
-gvfs
-gvfs-smb
-acpi
-Thunar
-thunar-volman
 audit
 audit-libs-devel
+redhat-lsb
+libXScrnSaver
 EOF
 
 yum groupinstall -y 'Development Tools'
@@ -74,8 +78,8 @@ systemctl disable iscsid.service
 systemctl disable atd.service
 systemctl disable cron.service
 systemctl disable abrt.service
-# systemctl disable bluetooth.service
-# systemctl disable lvm2-monitor.service
+systemctl disable bluetooth.service
+systemctl disable lvm2-monitor.service
 systemctl disable avahi-daemon.service
 systemctl disable mdmonitor-takeover.service
 systemctl disable sendmail.service
@@ -84,13 +88,12 @@ systemctl disable NetworkManager.service
 # Install misc codec support
 
 yum --nogpgcheck -y install http://rpm.livna.org/livna-release.rpm http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
-yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad
+yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer-ffmpeg libdvdcss libdvdnav
 
 # Install Google chrome
 # Needed for google-chrome package
 # yum install -y redhat-lsb libXScrnSaver
 
 echo "yum install complete..."
-# echo "Please manually install Oracle Java, google-chrome, and flash packages"
-# echo "for google-chrome: yum install -y redhat-lsb libXScrnSaver"
+echo "Oracle Java, google-chrome, and flash packages must be manually installed"
 
