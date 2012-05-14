@@ -129,7 +129,7 @@ set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+"let g:solarized_visibility="high"
 colorscheme solarized
 
 " when we have a colored terminal or gui...
@@ -310,4 +310,6 @@ nnoremap k gk
 
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+autocmd FileType vimwiki set ai sw=4 ts=4 et
 

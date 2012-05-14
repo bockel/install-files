@@ -5,6 +5,7 @@ xfce4-power-manager &
 #
 # Start the pulse audio subsystem
 pulseaudio --start
+gnome-keyring-daemon
 
 while true; do
 	xsetroot -name "$(acpi -b | cut -d, -s -f2) | $( date +"%F %R" )"
