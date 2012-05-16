@@ -13,6 +13,8 @@ export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID
 export SSH_AUTH_SOCK
 
+xscreensaver &
+
 while true; do
 	xsetroot -name "$(acpi -b | cut -d, -s -f2) | $( date +"%F %R" )"
 	sleep 1m
