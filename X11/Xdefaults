@@ -89,3 +89,10 @@
  urxvt*font:        -xos4-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
  urxvt*boldFont:    -xos4-terminus-bold-*-*-*-18-*-*-*-*-*-*-*
 
+
+!! Configure xscreensaver settings
+xscreensaver.lock: True
+xscreensaver.timeout: 0:10:00
+xscreensaver.lockTimeout: 0:00:00
+xscreensaver.programs: GL: bouncingcow -root \n
+

@@ -7,7 +7,8 @@ xfce4-power-manager &
 #
 # Start the pulse audio subsystem
 pulseaudio --start
-eval `gnome-keyring-daemon --start --components=pksc11,secrets,ssh,gpg`
+
+eval `gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg`
 export GPG_AGENT_INFO
 export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID

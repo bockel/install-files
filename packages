@@ -59,6 +59,8 @@ terminus-fonts
 terminus-fonts-console
 liberation-*
 dejavu-*
+aajohan-comfortaa-fonts
+abattis-cantarell-fonts
 libreoffice-writer
 libreoffice-draw
 libreoffice-impress
@@ -69,6 +71,9 @@ audit
 audit-libs-devel
 redhat-lsb
 libXScrnSaver
+gnupg
+gnupg2
+thunderbird
 EOF
 
 yum groupinstall -y 'Development Tools'
