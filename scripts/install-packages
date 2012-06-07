@@ -1,3 +1,4 @@
+#!/bin/bash
 
 while read line; do
 	yum erase -y "$line"
@@ -74,6 +75,9 @@ libXScrnSaver
 gnupg
 gnupg2
 thunderbird
+lua
+lua-devel
+luarocks
 EOF
 
 yum groupinstall -y 'Development Tools'
