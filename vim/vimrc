@@ -313,3 +313,6 @@ autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bu
 
 autocmd FileType vimwiki set ai sw=4 ts=4 et
 
+" allow doxygen support in C/C++ files
+let g:load_doxygen_syntax=1
+

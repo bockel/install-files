@@ -16,6 +16,7 @@ alias df='df -h'
 alias w3m='w3m -T text/html'
 alias xm='xmodmap $HOME/.Xmodmap'
 alias bc='bc -l'
+alias pdf='epdfview'
 
 # User specific environment and startup programs
 
