@@ -14,7 +14,7 @@ alias chrome="google-chrome --incognito"
 alias vi='gvim -v'
 alias df='df -h'
 alias w3m='w3m -T text/html'
-alias xm='xmodmap $HOME/.Xmodmap'
+# alias xm='xmodmap $HOME/.Xmodmap'
 alias bc='bc -l'
 alias pdf='epdfview'
 

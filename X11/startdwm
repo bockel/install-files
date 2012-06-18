@@ -20,7 +20,6 @@ while true; do
 	xsetroot -name "$(acpi -b | cut -d, -s -f2) | $( date +"%F %R" )"
 	sleep 1m
 done &
-xmodmap ~/.Xmodmap
 # Start urxvt daemon, allows for faster urxvt-client connections and reduced memory footprint
 urxvtd -q -o -f
 
