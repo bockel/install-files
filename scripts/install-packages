@@ -7,6 +7,8 @@ smolt*
 iok
 empathy
 evolution
+gnumeric
+goffice
 EOF
 
 yum update -y

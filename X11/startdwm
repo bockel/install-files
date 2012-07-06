@@ -6,7 +6,8 @@ thunar --daemon &
 xfce4-power-manager &
 #
 # Start the pulse audio subsystem
-pulseaudio --start
+#pulseaudio --start
+start-pulseaudio-x11
 
 eval `gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg`
 export GPG_AGENT_INFO
