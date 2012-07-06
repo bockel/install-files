@@ -22,6 +22,8 @@ alias pdf='epdfview'
 
 PATH=$PATH:$HOME/bin
 export PATH
+export VISUAL=vim
+export EDITOR=vim
 
 alias encrypt='openssl enc -aes-256-ecb -e -a -salt -in'
 alias decrypt='openssl enc -aes-256-ecb -d -a -salt -in'
