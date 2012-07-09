@@ -291,17 +291,21 @@ endif
 " -----------------------------------------------------------
 
 " jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
+if has("autocmd") && !exists("autocommands_loaded")
+    let autocommands_loaded = 1
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal! g'\"" | endif
 
-  au FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-  au FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-  au! BufRead,BufNewFile *.dbk setfiletype docbkxml
+    au FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+    au FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+    " Load sparkup with docbook and xml files too
+    au! BufRead,BufNewFile *.dbk set filetype=docbkxml | source ~/.vim/bundle/sparkup/ftplugin/html/sparkup.vim
+    au FileType html,xhtml,xml source ~/.vim/bundle/sparkup/ftplugin/html/sparkup.vim
 
-  au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-  " au FileType vimwiki set ai sw=4 ts=4 et
+    au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+    " au FileType vimwiki set ai sw=4 ts=4 et
+    au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 endif
 
 imap jj <esc>
