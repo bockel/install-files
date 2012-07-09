@@ -30,3 +30,15 @@
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
 	ignore = dirty
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/sparkup"]
+	path = vim/bundle/sparkup
+	url = https://github.com/bingaman/vim-sparkup.git
