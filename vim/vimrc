@@ -19,6 +19,9 @@ set whichwrap+=<,>,h,l
 set nocompatible
 set number
 set cursorline
+set modelines=0
+set showmode
+set showcmd
 
 if has("gui_running")
   set t_Co=256
@@ -316,6 +319,16 @@ set ai
 set et
 set sw=4
 set ts=4
+set sts=4
+set autoindent
+" add better handling of lists
+set fo+=ncroq
+" set <leader>ft to fold HTML/XML tags
+nnoremap <leader>ft Vatzf
+" select last pasted text
+nnoremap <leader>v V`]
+" wrap paragraphs
+nnoremap <leader>q gqip
 
 " Improve up/down movement on wrapped linex
 nnoremap j gj
