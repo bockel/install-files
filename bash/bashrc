@@ -24,7 +24,10 @@ PATH=$PATH:$HOME/bin
 export PATH
 export VISUAL=vim
 export EDITOR=vim
+export XMLLINT_INDENT="    "
 
 alias encrypt='openssl enc -aes-256-ecb -e -a -salt -in'
 alias decrypt='openssl enc -aes-256-ecb -d -a -salt -in'
 
+alias dbkvalidate='xmllint --stream --noout --relaxng /usr/share/xml/docbook5/schema/rng/5.0/docbook.rng'
+alias dbk2html='xsltproc -xinclude -o out.html /usr/share/sgml/docbook/xsl-ns-stylesheets/html/docbook.xsl'
