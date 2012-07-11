@@ -80,6 +80,7 @@ thunderbird
 lua
 lua-devel
 luarocks
+docbook5-*
 EOF
 
 yum groupinstall -y 'Development Tools'

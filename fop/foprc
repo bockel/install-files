@@ -1,0 +1,8 @@
+# get fedora/RHEL to load the jar via the CLASSPATH var
+FOP_VERSION="offo-hyphenation-binary_v2.0"
+
+if [ -n "$CLASSPATH" ]; then
+    CLASSPATH=$CLASSPATH:$HOME/config/fop/fop-hyph.jar
+else
+    CLASSPATH=$HOME/config/fop/fop-hyph.jar
+fi
