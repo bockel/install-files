@@ -81,6 +81,8 @@ lua
 lua-devel
 luarocks
 docbook5-*
+fop
+jing
 EOF
 
 yum groupinstall -y 'Development Tools'
