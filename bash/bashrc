@@ -25,6 +25,8 @@ export PATH
 export VISUAL=vim
 export EDITOR=vim
 export XMLLINT_INDENT="    "
+export PYTHONPATH=`python -c 'import sys;print ":".join(sys.path)[1:]'`
+export JYTHONPATH=$PYTHONPATH
 
 alias encrypt='openssl enc -aes-256-ecb -e -a -salt -in'
 alias decrypt='openssl enc -aes-256-ecb -d -a -salt -in'

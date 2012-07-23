@@ -1,0 +1,11 @@
+#!/bin/sh
+if [ "$#" -gt 2 -o "$#" -lt 1 ]; then
+    echo "USAGE: $0 <svg-file> <out-png>"
+    exit 1
+fi
+OUT="$2"
+if [ "$#" -eq 1 ]; then
+    OUT="${1%.*}.png"
+fi
+
+inkscape -f "$1" -e "$OUT"
