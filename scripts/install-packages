@@ -83,6 +83,7 @@ luarocks
 docbook5-*
 fop
 jing
+python-matplotlib
 EOF
 
 yum groupinstall -y 'Development Tools'
