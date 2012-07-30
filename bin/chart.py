@@ -90,21 +90,21 @@ def proc_csv(csvfile,topx=0,as_percent=False):
         for k,vls in vals.items():
             vals[k] = [float(v)*100/totalval for v in vls]
 
-    if topx > 0:
-        count=0
-        o_a=False
-        for k,v in sorted(vals.items(),key=lambda x:sum(x[1]),reverse=True):
-            if count > topx:
-                if not o_a:
-                    keys.append(OTHERS_ITEM)
-                    values.append(v)
-                    o_a = True
-                else:
-                    values[-1] = [x+y for x,y in zip(v,values[-1])]
-            else:
-                keys.append(k)
+    count=0
+    o_a=False
+    for k,v in sorted(vals.items(),key=lambda x:sum(x[1]),reverse=True):
+        if topx > 0 and count > topx:
+            if not o_a:
+                keys.append(OTHERS_ITEM)
                 values.append(v)
-            count += 1
+                o_a = True
+            else:
+                values[-1] = [x+y for x,y in zip(v,values[-1])]
+        else:
+            keys.append(k)
+            values.append(v)
+        count += 1
+
     return (keys,values)
 
 def csv2chart(keys,values,outfile,charttype="bar",maxy=None,
@@ -112,7 +112,7 @@ def csv2chart(keys,values,outfile,charttype="bar",maxy=None,
         width=0.4,val_as_int=False,label=False,colormap="default"):
 
     is_svg = os.path.splitext(outfile)[1].lower() == ".svg" # otherwise, png
-    minvals = 100.
+    minvals = 100
     maxval = 0.
 
     for v in values:
@@ -152,7 +152,7 @@ _opts = [('h','help','Displays this information')
         ,('y:','ylabel=','Set y-axis (values) label')
         ,('t:','title=','Set chart title')
         ,('i','int','Use integer values as labels')
-        ,('l','label','Label values')
+        ,('v','values','Label values')
         ,('w:','width=','Set chart value width (for bar charts) [default: 0.4]')
         ,('T:','topx=','Display top X results, 0=all [default: 0]')
         ,('p','use_percent','Use percentages instead of raw values')
@@ -187,6 +187,8 @@ def main(argv):
         print("ERROR: Unrecognized chart type \"%s\""%(args[0]))
         print_usage(sys.argv[0])
         return 1
+    if args[0].lower() == 'pie':
+        print("WARN: pie charts are dumb... using bar chart instead")
 
     chart_args={'orient_v':True
             ,'width':0.4
@@ -225,7 +227,7 @@ def main(argv):
             chart_args['xlabel'] = a
         elif o in ('-y','--ylabel'):
             chart_args['ylabel'] = a
-        elif o in ('-l','--label'):
+        elif o in ('-v','--values'):
             chart_args['label'] = True
         elif o in ('-T','--topx'):
             csv_args['topx'] = int(a)
