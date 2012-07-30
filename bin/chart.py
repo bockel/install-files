@@ -70,30 +70,56 @@ CHARTTYPES = {
     , "pie":barchart
 }
 
-def csv2chart(csvfile,outfile,charttype="bar",
-        xlabel=None,ylabel=None,title=None,orient_v=True,
-        width=0.4,val_as_int=False,label=False,colormap="default"):
+OTHERS_ITEM = "OTHER"
 
-    is_svg = os.path.splitext(outfile)[1].lower() == ".svg" # otherwise, png
-    lc = 0
-    minvals = 100
-    maxval = 0
-    keys = []
+def proc_csv(csvfile,topx=0,as_percent=False):
     values = []
-
+    keys = []
+    vals = dict()
+    totalval = 0.
     # assume all input is of the form:
     #       label, value, value2, etc...
     for line in csv.reader(fileinput.input(csvfile)):
         if line is None or len(line)<1 or line[0].startswith("#"):
             continue
-        lc += 1
-        keys.append(line[0])
-        if len(line)-1 < minvals:
-            minvals = len(line)-1
-        tmp = [float(x) for x in line[1:]]
-        if sum(tmp) > maxval:
-            maxval = sum(tmp)
-        values.append(tmp)
+        # keys.append(line[0])
+        t = [float(x) for x in line[1:]]
+        totalval += sum(t)
+        vals[line[0]] = t
+    if as_percent:
+        for k,vls in vals.items():
+            vals[k] = [float(v)*100/totalval for v in vls]
+
+    if topx > 0:
+        count=0
+        o_a=False
+        for k,v in sorted(vals.items(),key=lambda x:sum(x[1]),reverse=True):
+            if count > topx:
+                if not o_a:
+                    keys.append(OTHERS_ITEM)
+                    values.append(v)
+                    o_a = True
+                else:
+                    values[-1] = [x+y for x,y in zip(v,values[-1])]
+            else:
+                keys.append(k)
+                values.append(v)
+            count += 1
+    return (keys,values)
+
+def csv2chart(keys,values,outfile,charttype="bar",maxy=None,
+        xlabel=None,ylabel=None,title=None,orient_v=True,
+        width=0.4,val_as_int=False,label=False,colormap="default"):
+
+    is_svg = os.path.splitext(outfile)[1].lower() == ".svg" # otherwise, png
+    minvals = 100.
+    maxval = 0.
+
+    for v in values:
+        if len(v) < minvals:
+            minvals = len(v)
+        if sum(v) > maxval:
+            maxval = sum(v)
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -102,6 +128,8 @@ def csv2chart(csvfile,outfile,charttype="bar",
             orient_v=orient_v, label_offset=(.01*maxval),
             val_as_int=val_as_int, width=width, colormap=colormap)
 
+    if not maxy is None:
+        ax.set_ylim(ymax=maxy) if orient_v else ax.set_xlim(xmax=maxy)
     if ylabel:
         ax.set_ylabel(ylabel) if orient_v else ax.set_xlabel(ylabel)
     if xlabel:
@@ -126,6 +154,8 @@ _opts = [('h','help','Displays this information')
         ,('i','int','Use integer values as labels')
         ,('l','label','Label values')
         ,('w:','width=','Set chart value width (for bar charts) [default: 0.4]')
+        ,('T:','topx=','Display top X results, 0=all [default: 0]')
+        ,('p','use_percent','Use percentages instead of raw values')
 ]
 
 def print_usage(cmd):
@@ -139,6 +169,9 @@ def print_usage(cmd):
 def main(argv):
     import getopt
 
+    if len(sys.argv) < 4:
+        print_usage(sys.argv[0])
+        return 1
     try:
         opts,args = getopt.getopt(sys.argv[1:],
                 "".join([x[0] for x in _opts]),[x[1] for x in _opts])
@@ -164,6 +197,10 @@ def main(argv):
             ,'val_as_int':False
             ,'label':False
             ,'charttype':args[0].lower()
+            ,'maxy':None
+    }
+    csv_args={'as_percent':False
+            ,'topx':0
     }
 
     for o,a in opts:
@@ -190,6 +227,11 @@ def main(argv):
             chart_args['ylabel'] = a
         elif o in ('-l','--label'):
             chart_args['label'] = True
+        elif o in ('-T','--topx'):
+            csv_args['topx'] = int(a)
+        elif o in ('-p','--use_percent'):
+            chart_args['maxy'] = 100
+            csv_args['as_percent'] = True
         elif o in ('-w','--width'):
             try:
                 chart_args['width'] = float(a)
@@ -197,7 +239,8 @@ def main(argv):
                 print("ERROR: Invalid width value: %s"%(a))
                 return 1
 
-    csv2chart(args[1],args[2],**chart_args)
+    keys,values = proc_csv(args[1],**csv_args)
+    csv2chart(keys,values,args[2],**chart_args)
 
     return 0
 
