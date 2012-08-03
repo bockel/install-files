@@ -42,3 +42,9 @@
 [submodule "vim/bundle/sparkup"]
 	path = vim/bundle/sparkup
 	url = https://github.com/bingaman/vim-sparkup.git
+[submodule "python/pygments/solarized-dark"]
+	path = python/pygments/solarized-dark
+	url = https://github.com/gthank/solarized-dark-pygments.git
+[submodule "python/pygments/solarized-light"]
+	path = python/pygments/solarized-light
+	url = https://github.com/john2x/solarized-pygment.git
