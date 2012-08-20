@@ -1,4 +1,5 @@
 # .bash_profile
+export GOROOT=$HOME/Programs/go
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then

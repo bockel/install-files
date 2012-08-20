@@ -84,6 +84,8 @@ docbook5-*
 fop
 jing
 python-matplotlib
+python-cssutils
+python-pip
 EOF
 
 yum groupinstall -y 'Development Tools'
