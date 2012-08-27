@@ -1,0 +1,14 @@
+#!/bin/sh
+
+while read line
+do pip install --user "$line"
+done << EOF
+pygments
+pelican
+docutils
+webassets
+cssmin
+matplotlib
+lxml
+pyscss
+EOF

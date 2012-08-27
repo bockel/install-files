@@ -22,12 +22,13 @@ libxml2
 libxml2-devel
 libxslt
 libxslt-devel
+libpng-devel
+pcre-devel
 krb5-workstation
 rxvt-unicode
 git
 python-devel
-python-pygments
-python-docutils
+python-pip
 xfce4-power-manager
 gvfs
 gvfs-smb
@@ -83,9 +84,6 @@ luarocks
 docbook5-*
 fop
 jing
-python-matplotlib
-python-cssutils
-python-pip
 EOF
 
 yum groupinstall -y 'Development Tools'
@@ -105,7 +103,7 @@ systemctl disable NetworkManager.service
 # Install misc codec support
 
 yum --nogpgcheck -y install http://rpm.livna.org/livna-release.rpm http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
-yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer-ffmpeg libdvdcss libdvdnav
+yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer-plugins-bad-free gstreamer-plugins-bad-nonfree gstreamer-ffmpeg libdvdcss libdvdnav gstreamer-ffmpeg
 
 # Install Google chrome
 # Needed for google-chrome package

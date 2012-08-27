@@ -1,5 +1,7 @@
 # .bash_profile
 export GOROOT=$HOME/Programs/go
+PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export PYTHONPATH=`python -c 'import sys;print ":".join(sys.path[2:])'`
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
