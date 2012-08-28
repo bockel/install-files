@@ -17,15 +17,15 @@ alias w3m='w3m -T text/html'
 # alias xm='xmodmap $HOME/.Xmodmap'
 alias bc='bc -l'
 alias pdf='epdfview'
+alias pip='pip-python'
+alias pip-install='pip-python install --install-option="--user"'
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin
 export PATH
 export VISUAL=vim
 export EDITOR=vim
 export XMLLINT_INDENT="    "
-export PYTHONPATH=`python -c 'import sys;print ":".join(sys.path[2:])'`
 export JYTHONPATH=$PYTHONPATH
 
 alias encrypt='openssl enc -aes-256-ecb -e -a -salt -in'
@@ -33,3 +33,4 @@ alias decrypt='openssl enc -aes-256-ecb -d -a -salt -in'
 
 alias dbkvalidate='xmllint --stream --noout --relaxng /usr/share/xml/docbook5/schema/rng/5.0/docbook.rng'
 alias dbk2html='xsltproc -xinclude -o out.html /usr/share/sgml/docbook/xsl-ns-stylesheets/html/docbook.xsl'
+
