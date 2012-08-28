@@ -48,7 +48,7 @@ powertop
 htmldoc
 ImageMagick
 ImageMagick-devel
-fontmatrix
+font-manager
 libX11-devel
 libXinerama-devel
 keepassx
@@ -63,6 +63,11 @@ terminus-fonts
 terminus-fonts-console
 liberation-*
 dejavu-*
+bitstream-*
+google-droid-*-fonts
+tlomt-*-fonts
+mplus-*-fonts
+mgopen-*-fonts
 aajohan-comfortaa-fonts
 abattis-cantarell-fonts
 libreoffice-writer
