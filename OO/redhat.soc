@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ooo:color-table xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ooo="http://openoffice.org/2004/office">
+    <draw:color draw:name="Black" draw:color="#000000"/>
+    <draw:color draw:name="White" draw:color="#ffffff"/>
+    <draw:color draw:name="LtGrey" draw:color="#c8c5ac"/>
+    <draw:color draw:name="Grey" draw:color="#60605b"/>
+    <draw:color draw:name="Yellow" draw:color="#e3df36"/>
+    <draw:color draw:name="Orange" draw:color="#ff8d00"/>
+    <draw:color draw:name="Red" draw:color="#cc0000"/>
+    <draw:color draw:name="MdRed" draw:color="#9e292b"/>
+    <draw:color draw:name="DkRed" draw:color="#781f1c"/>
+    <draw:color draw:name="Purple" draw:color="#4e376b"/>
+    <draw:color draw:name="LtBlue" draw:color="#bfdce8"/>
+    <draw:color draw:name="Blue" draw:color="#0093d9"/>
+    <draw:color draw:name="DkBlue" draw:color="#003d6e"/>
+    <draw:color draw:name="Aqua" draw:color="#2c8596"/>
+    <draw:color draw:name="Green" draw:color="#abb400"/>
+</ooo:color-table>

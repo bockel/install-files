@@ -100,6 +100,19 @@ set gdefault
 set noedcompatible
 
 " -----------------------------------------------------------
+" Relative Numbering
+" -----------------------------------------------------------
+set rnu
+au BufEnter * :set rnu
+au BufLeave * :set nu
+au WinEnter * :set rnu
+au WinLeave * :set nu
+au InsertEnter * :set nu
+au InsertLeave * :set rnu
+au FocusLost * :set nu
+au FocusGained * :set rnu
+
+" -----------------------------------------------------------
 " Leader mappings
 " -----------------------------------------------------------
 " Use the arrows to something usefull
@@ -301,6 +314,8 @@ if has("autocmd") && !exists("autocommands_loaded")
     " Load sparkup with xml files too
     au FileType html,xhtml,xml source ~/.vim/bundle/sparkup/ftplugin/html/sparkup.vim
 
+    au FileType rst set sw=2 ts=2 sts=2
+
     au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
     " use `xmllint` to format XML markup
@@ -338,7 +353,6 @@ nnoremap <leader>q gqip
 " Improve up/down movement on wrapped linex
 nnoremap j gj
 nnoremap k gk
-
 
 " allow doxygen support in C/C++ files
 let g:load_doxygen_syntax=1

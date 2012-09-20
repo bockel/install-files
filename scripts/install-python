@@ -11,4 +11,6 @@ cssmin
 matplotlib
 lxml
 pyscss
+pytz
+python-dateutil
 EOF
