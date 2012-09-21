@@ -40,6 +40,9 @@ cat <<- EOF | xsltproc --novalid --nonet - "$1"
             <xsl:text>
 </xsl:text>
         </xsl:for-each>
+        <xsl:value-of select="concat('Total: ',round(sum(a:wavetrack/a:waveclip/a:sequence/@numsamples) div \$rate) div 60,'m')"/>
+        <xsl:text>
+</xsl:text>
     </xsl:template>
     <xsl:template match="text()"/>
 </xsl:stylesheet>
