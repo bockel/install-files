@@ -6,7 +6,8 @@ done << EOF
 smolt*
 iok
 empathy
-evolution
+cheese
+gnome-games
 gnumeric
 goffice
 EOF
@@ -16,7 +17,6 @@ yum update -y
 while read line; do
 	yum install -y "$line"
 done <<EOF
-vim-enhanced
 vim-X11
 libxml2
 libxml2-devel
@@ -41,7 +41,6 @@ htmldoc
 ImageMagick
 ImageMagick-devel
 font-manager
-libX11-devel
 libXinerama-devel
 keepassx
 gimp
@@ -49,6 +48,7 @@ dia
 inkscape
 graphviz
 optipng
+pavucontrol
 terminus-fonts
 terminus-fonts-console
 liberation-*
@@ -65,20 +65,22 @@ libreoffice-draw
 libreoffice-impress
 libreoffice-graphicfilter
 libreoffice-langpack-en
-xchat
+xchat-gnome
 audit
 audit-libs-devel
 redhat-lsb
 libXScrnSaver
 gnupg
 gnupg2
-thunderbird
 jing
 speex
 speex-tools
 ffmpeg
 audacity
 gnome-tweak-tool
+gnome-mplayer
+dconf-editor
+tmux
 EOF
 
 yum groupinstall -y 'Development Tools'
@@ -88,8 +90,6 @@ systemctl disable iscsid.service
 systemctl disable atd.service
 systemctl disable cron.service
 systemctl disable abrt.service
-systemctl disable bluetooth.service
-systemctl disable lvm2-monitor.service
 systemctl disable avahi-daemon.service
 systemctl disable mdmonitor-takeover.service
 systemctl disable sendmail.service
@@ -98,7 +98,7 @@ systemctl disable sendmail.service
 # Install misc codec support
 
 yum --nogpgcheck -y install http://rpm.livna.org/livna-release.rpm http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
-yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer-plugins-bad-free gstreamer-plugins-bad-nonfree gstreamer-ffmpeg libdvdcss libdvdnav gstreamer-ffmpeg
+yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer-plugins-bad-free gstreamer-plugins-bad-nonfree gstreamer-ffmpeg libdvdcss libdvdnav gstreamer-ffmpeg ffmpeg
 
 yum install -y alsa-plugins-*
 
@@ -106,4 +106,3 @@ yum install -y alsa-plugins-*
 
 echo "yum install complete..."
 echo "Oracle Java, google-chrome, and flash packages must be manually installed"
-
