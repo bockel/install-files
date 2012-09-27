@@ -357,3 +357,10 @@ nnoremap k gk
 " allow doxygen support in C/C++ files
 let g:load_doxygen_syntax=1
 
+" customize PotWiki configuration
+let potwiki_home = "$HOME/notes/HomePage.wiki"
+let potwiki_home_dir = "$HOME/notes"
+let potwiki_suffix = ".wiki"
+let potwiki_autowrite = 1
+au Syntax potwiki runtime! syntax/rst.vim
+
