@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# Convert a PDF slide presentation and audio track into an OGV video
+# Copyright (C) 2012  William Heinbockel <heinbockel@redhat.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+if [ $# -ne 1 ]
+then echo "Usage: $0 audacity.aup"
+    exit 1
+fi
+
+if [ ! -r "$1" ]
+then echo "Error: cannot find audacity file: $1"
+    exit 1
+fi
+
+# Get track lengths
+cat <<- EOF | xsltproc --novalid --nonet - "$1"
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:a="http://audacity.sourceforge.net/xml/">
+    <xsl:output method="text"/>
+    <xsl:variable name="rate" select="/a:project/@rate"/>
+    <xsl:template match="/a:project">
+        <xsl:for-each select="a:wavetrack">
+            <xsl:value-of select="concat('Slide ',position(),': ',round(sum(a:waveclip/a:sequence/@numsamples) div \$rate),'s')"/>
+            <xsl:text>
+</xsl:text>
+        </xsl:for-each>
+        <xsl:value-of select="concat('Total: ',round(sum(a:wavetrack/a:waveclip/a:sequence/@numsamples) div \$rate) div 60,'m')"/>
+        <xsl:text>
+</xsl:text>
+    </xsl:template>
+    <xsl:template match="text()"/>
+</xsl:stylesheet>
+EOF
+

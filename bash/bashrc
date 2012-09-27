@@ -8,6 +8,10 @@ fi
 # User specific aliases and functions
 set -o vi
 
+# Run tmux/screen on shell login
+[[ $- != *i* ]] && return
+[[ $TERM != screen* ]] && exec tmux
+
 alias chrome="google-chrome --incognito"
 # alias ll='ls -l'
 # alias la='ls -la'
