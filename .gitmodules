@@ -22,10 +22,6 @@
 	path = vim/bundle/csv.vim
 	url = https://github.com/vim-scripts/csv.vim.git
 	ignore = dirty
-[submodule "vim/bundle/vimwiki"]
-	path = vim/bundle/vimwiki
-	url = https://github.com/vim-scripts/vimwiki.git
-	ignore = dirty
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
@@ -45,3 +41,6 @@
 [submodule "X11/gnome-terminal-solarized"]
 	path = X11/gnome-terminal-solarized
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+[submodule "vim/bundle/potwiki"]
+	path = vim/bundle/potwiki
+	url = https://github.com/bockel/potwiki.vim.git

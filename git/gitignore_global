@@ -29,6 +29,7 @@
 *.swp
 ~*
 *~
+%*
 
 # Oxygen project
 *.xpr
