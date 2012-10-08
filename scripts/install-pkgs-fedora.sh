@@ -81,6 +81,8 @@ gnome-tweak-tool
 gnome-mplayer
 dconf-editor
 tmux
+policycoreutils-gui
+soundconverter
 EOF
 
 yum groupinstall -y 'Development Tools'
