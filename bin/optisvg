@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "$#" -ge 1 ]
+then for f in "$@"
+    do if [ ! -r "$f" ]
+        then echo "Skipping: Cannot find file: $f"
+            continue
+    fi
+
+    in="$f"
+    out=${f%.*}.min.svg
+    scour.py -i "$in" -o "$out" --indent=none
+    done
+else echo "Usage: $0 image1.svg ..."
+    exit 1
+fi
+

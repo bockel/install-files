@@ -5,6 +5,8 @@
 [core]
 	editor = vim
 	excludesfile = /home/bockel/.gitignore_global
+	compression = 5
+	loosecompression = 9
 [merge]
 	tool = vimdiff
 [diff]

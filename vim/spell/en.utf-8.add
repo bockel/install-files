@@ -6,7 +6,6 @@ CEE
 timestamp
 IPv6
 IPv4
-on
 Lifecycle
 whitepaper
 SDL
@@ -16,3 +15,6 @@ signedness
 CWE
 metacharacter
 metacharacters
+repurposed
+repurpose
+MITRE
