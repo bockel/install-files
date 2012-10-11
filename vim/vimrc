@@ -314,10 +314,10 @@ if has("autocmd") && !exists("autocommands_loaded")
     " Load sparkup with xml files too
     au FileType html,xhtml,xml source ~/.vim/bundle/sparkup/ftplugin/html/sparkup.vim
 
-    au FileType rst,potwiki set sw=2 ts=2 sts=2
+    "au FileType rst,potwiki set sw=2 ts=2 sts=2
 
-    au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+    "au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>72v.\+', -1)
     " use `xmllint` to format XML markup
     au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
     " make sure spell added to the toplevel syntax so it can be seen
@@ -337,9 +337,10 @@ map <c-l> <c-w>l
 
 set ai
 set et
-set sw=4
-set ts=4
-set sts=4
+set tw=72
+set sw=3
+set ts=3
+set sts=3
 set autoindent
 " add better handling of lists
 set fo+=ncroq

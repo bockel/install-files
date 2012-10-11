@@ -22,7 +22,7 @@ alias w3m='w3m -T text/html'
 alias bc='bc -l'
 alias pdf='epdfview'
 alias pip='pip-python'
-alias pip-install='pip-python install --install-option="--user"'
+alias pip-install='pip-python install --install-option="--user" -U'
 
 # User specific environment and startup programs
 
