@@ -1,0 +1,43 @@
+
+# From oh-my-zsh zshrc template
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="robbyrussell"
+# Comment this out to disable weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git ssh-agent yum)
+
+source $ZSH/oh-my-zsh.sh
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+unsetopt correctall
+
+# Run tmux/screen on shell login
+[[ $- != *i* ]] && return
+[[ $TERM != screen* ]] && exec tmux
+
+alias chrome="google-chrome --incognito"
+# alias ll='ls -l'
+# alias la='ls -la'
+alias vi='gvim -v'
+alias df='df -h'
+alias w3m='w3m -T text/html'
+# alias xm='xmodmap $HOME/.Xmodmap'
+alias bc='bc -l'
+alias pdf='epdfview'
+alias pip='pip-python'
+alias pip-install='pip-python install --install-option="--user" -U'
+
+# User specific environment and startup programs
+
+alias encrypt='openssl enc -aes-256-ecb -e -a -salt -in'
+alias decrypt='openssl enc -aes-256-ecb -d -a -salt -in'
+
+# alias dbkvalidate='xmllint --stream --noout --relaxng /usr/share/xml/docbook5/schema/rng/5.0/docbook.rng'
+# alias dbk2html='xsltproc -xinclude -o out.html /usr/share/sgml/docbook/xsl-ns-stylesheets/html/docbook.xsl'
+

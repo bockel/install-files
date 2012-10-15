@@ -74,8 +74,9 @@ done
 echo "fadeout:1" >> "$name.txt"
 echo "background:2" >> "$name.txt"
 
-dvd-slideshow -n "$name" -f "$name.txt" -a "../$3"
-ffmpeg -y -loglevel quiet -i "$name.vob" -filter:a earwax -ac 2 -ar 8000 -c:a libspeex -r 10 "../$name.ogv"
+dvd-slideshow -n "$name" -f "$name.txt"
+# ffmpeg -y -loglevel quiet -i "$name.vob" -filter:a earwax -ac 2 -ar 8000 -c:a libspeex -r 10 "../$name.ogv"
+ffmpeg -y -loglevel quiet -i "$name.vob" -i "../$3" -map 0:0 -map 1:0 -filter:a earwax -ac 1 -ar 8000 -c:a libvorbis -r 10 "../$name.ogv"
 
 cd ..
 rm -rf "$tdir"

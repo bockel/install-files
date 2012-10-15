@@ -1,0 +1,10 @@
+export GOROOT=$HOME/Programs/go
+PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export PATH
+export PYTHONPATH=`python -c 'import sys;print ":".join(sys.path[2:])'`
+
+export VISUAL=vim
+export EDITOR=vim
+export XMLLINT_INDENT="    "
+export JYTHONPATH=$PYTHONPATH
+

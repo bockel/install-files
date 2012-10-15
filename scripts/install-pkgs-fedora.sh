@@ -17,6 +17,7 @@ yum update -y
 while read line; do
 	yum install -y "$line"
 done <<EOF
+zsh
 vim-X11
 libxml2
 libxml2-devel
@@ -102,7 +103,7 @@ systemctl disable sendmail.service
 yum --nogpgcheck -y install http://rpm.livna.org/livna-release.rpm http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
 yum install -y totem-mozplugin gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer-plugins-bad-free gstreamer-plugins-bad-nonfree gstreamer-ffmpeg libdvdcss libdvdnav gstreamer-ffmpeg ffmpeg
 
-yum install -y alsa-plugins-*
+yum install -y alsa-plugins-* sox sox-plugins-* mjpegtools
 
 # Install Google chrome
 
