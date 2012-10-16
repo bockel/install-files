@@ -322,6 +322,7 @@ if has("autocmd") && !exists("autocommands_loaded")
     au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
     " make sure spell added to the toplevel syntax so it can be seen
     au FileType xml syn spell toplevel
+    " au BufNewFile,BufRead *.wiki set ft=rst
 endif
 
 imap jj <esc>
@@ -355,6 +356,12 @@ nnoremap <leader>q gqip
 nnoremap j gj
 nnoremap k gk
 
+" Yank text to global clipboard
+noremap <leader>y "*y
+noremap <leader>Y "*Y
+" Set proper indentation for pasting from clipboard
+noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
+
 " allow doxygen support in C/C++ files
 let g:load_doxygen_syntax=1
 
@@ -363,5 +370,6 @@ let potwiki_home = "$HOME/notes/HomePage.wiki"
 let potwiki_home_dir = "$HOME/notes"
 let potwiki_suffix = ".wiki"
 let potwiki_autowrite = 1
-au Syntax potwiki runtime! syntax/rst.vim
+" au Syntax potwiki runtime! syntax/rst.vim
+" au FileType potwiki set ft=rst
 
