@@ -76,7 +76,8 @@ echo "background:2" >> "$name.txt"
 
 dvd-slideshow -n "$name" -f "$name.txt"
 # ffmpeg -y -loglevel quiet -i "$name.vob" -filter:a earwax -ac 2 -ar 8000 -c:a libspeex -r 10 "../$name.ogv"
-ffmpeg -y -loglevel quiet -i "$name.vob" -i "../$3" -map 0:0 -map 1:0 -filter:a earwax -ac 1 -ar 8000 -c:a libvorbis -r 10 "../$name.ogv"
+lame --silent --preset voice "../$3" audio.mp3
+ffmpeg -y -i security-mentality.vob -i "audio.mp3" -map 0:0 -map 1:0 -s 640x480 -r 15 -c:v libx264 -trellis 2 -cmp 2 -subcmp 2 -g 300 -flags2 -wpred-dct8x8 -level 30 -maxrate 10M -bufsize 10M -c:a copy "../$name.mp4"
 
 cd ..
 rm -rf "$tdir"
