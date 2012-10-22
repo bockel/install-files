@@ -1,7 +1,31 @@
 
+set nocompatible
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
+" Migrate from pathogen to vundle
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle bundles:
+Bundle 'gmarik/vundle'
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'docunext/closetag.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'bingaman/vim-sparkup'
+Bundle 'kien/ctrlp.vim'
+
+Bundle 'bockel/potwiki.vim'
+
+" vim-script bundles
+Bundle 'VOoM'
+Bundle 'VST'
+Bundle 'csv.vim'
 
 filetype plugin indent on
 

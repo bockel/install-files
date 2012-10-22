@@ -1,49 +1,6 @@
-[submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
-	ignore = dirty
-[submodule "vim/bundle/solarized"]
-	path = vim/bundle/solarized
-	url = http://github.com/altercation/vim-colors-solarized.git
-	ignore = dirty
-[submodule "vim/bundle/closetag"]
-	path = vim/bundle/closetag
-	url = http://github.com/docunext/closetag.vim.git
-	ignore = dirty
-[submodule "vim/bundle/voom"]
-	path = vim/bundle/voom
-	url = http://github.com/vim-scripts/VOoM.git
-	ignore = dirty
-[submodule "vim/bundle/VST"]
-	path = vim/bundle/VST
-	url = http://github.com/vim-scripts/VST.git
-	ignore = dirty
-[submodule "vim/bundle/csv.vim"]
-	path = vim/bundle/csv.vim
-	url = https://github.com/vim-scripts/csv.vim.git
-	ignore = dirty
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
-	ignore = dirty
-[submodule "vim/bundle/vim-repeat"]
-	path = vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/sparkup"]
-	path = vim/bundle/sparkup
-	url = https://github.com/bingaman/vim-sparkup.git
 [submodule "X11/gnome-terminal-solarized"]
 	path = X11/gnome-terminal-solarized
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
-[submodule "vim/bundle/potwiki"]
-	path = vim/bundle/potwiki
-	url = https://github.com/bockel/potwiki.vim.git
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
