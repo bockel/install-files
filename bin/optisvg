@@ -7,8 +7,9 @@ then for f in "$@"
             continue
     fi
 
-    in="$f"
-    out=${f%.*}.min.svg
+    out="$f"
+    in=${f%.*}.orig.svg
+    mv -f "$out" "$in"
     scour.py -i "$in" -o "$out" --indent=none
     done
 else echo "Usage: $0 image1.svg ..."
