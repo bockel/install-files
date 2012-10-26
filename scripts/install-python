@@ -13,4 +13,5 @@ lxml
 pyscss
 pytz
 python-dateutil
+vim-bridge
 EOF

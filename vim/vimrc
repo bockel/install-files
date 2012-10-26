@@ -19,6 +19,7 @@ Bundle 'docunext/closetag.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'bingaman/vim-sparkup'
 Bundle 'kien/ctrlp.vim'
+Bundle 'nvie/vim-rst-tables'
 
 Bundle 'bockel/potwiki.vim'
 
