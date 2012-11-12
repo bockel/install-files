@@ -257,6 +257,15 @@ set guioptions-=m
 " get rid of toolbar
 set guioptions-=T
 
+" -----------------------------------------------------------
+" System-wide copy-paste
+" -----------------------------------------------------------
+" Yank text to global clipboard
+noremap <leader>y "+y
+noremap <leader>Y "+Y
+" Set proper indentation for pasting from clipboard
+noremap <leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
+
 
 " -----------------------------------------------------------
 " WIN-GUI Specials
@@ -382,12 +391,6 @@ nnoremap <leader>q gqip
 " Improve up/down movement on wrapped linex
 nnoremap j gj
 nnoremap k gk
-
-" Yank text to global clipboard
-noremap <leader>y "*y
-noremap <leader>Y "*Y
-" Set proper indentation for pasting from clipboard
-noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
 
 " allow doxygen support in C/C++ files
 let g:load_doxygen_syntax=1
